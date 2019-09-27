@@ -239,10 +239,10 @@ open class UIImageViewAligned: UIImageView {
         // Make sure we clear the contents of this container layer, since it refreshes from the image property once in a while.
         layer.contents = nil
         if #available(iOS 11, *) {
-            super.image = nil
+            super.image = UIImage(named: "transparent_image")
         }
     }
-    
+
     private func setInspectableProperty(_ newValue: Bool, alignment: UIImageViewAlignmentMask) {
         if newValue {
             self.alignment.insert(alignment)
@@ -255,3 +255,4 @@ open class UIImageViewAligned: UIImageView {
         return self.alignment.contains(alignment)
     }
 }
+
